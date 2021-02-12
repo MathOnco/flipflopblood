@@ -28,4 +28,4 @@ To execute the model using any parameter set you want refer to the help menu fro
 ```
 java -jar ./TickTockBlood.jar --help
 ```
-
+Source code is located within the ```./src/``` directory. This includes dependencies within the HAL framework and those required for the jar file build.
