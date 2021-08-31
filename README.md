@@ -1,6 +1,6 @@
 ## Summary
 
-Simulations of hematopoietic stem cells to accompany our paper "Reconstructing Contemporary Human Stem Cell Dynamics with Oscillatory Molecular Clocks."
+Simulations of hematopoietic stem cells to accompany our paper "Cell lineage tracing with molecular clocks based on fluctuating DNA methylation."
 
 The provided ```.jar``` file is used to exectue the model while the two accompanying files (```run_simulations.sh``` and ```GeneratePlots.py```) allow you to recreate the plots used within the paper.
 
