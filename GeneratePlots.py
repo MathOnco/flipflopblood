@@ -4,11 +4,10 @@ from scipy.stats import sem, t
 from scipy import mean
 import numpy as np
 
-def ci(tmpt_arr, conf=0.95):
+def sem_calc(tmpt_arr):
     m = mean(tmpt_arr)
     se = sem(tmpt_arr)
-    h = se * t.ppf((1 + conf) / 2, len(tmpt_arr) - 1)
-    return((m-h,m+h))
+    return((m-se,m+se))
 
 def getBetaDistPlots(f):
     props = ["Normal_1","ALL.0.9_1","CL.0.9_1","CHIP.0.9_1"]
@@ -48,16 +47,16 @@ def getVariancePlot(f, tmpts, reps=6):
 
         # get mean and ci at each timepoint
         sim_mean = []
-        sim_ci_low = []
-        sim_ci_high = []
+        sim_sem_low = []
+        sim_sem_high = []
         for k in range(0,tmpts[i]+1):
-            ci_tmpt = ci(replicate_data[k])
+            sem_tmpt = sem_calc(replicate_data[k])
             sim_mean.append(mean(replicate_data[k]))
-            sim_ci_low.append(ci_tmpt[0])
-            sim_ci_high.append(ci_tmpt[1])
+            sim_sem_low.append(sem_tmpt[0])
+            sim_sem_high.append(sem_tmpt[1])
 
         ax.plot(divs,sim_mean, linestyle=linetypes[i], color=color[i], linewidth=1, label=sam)
-        ax.fill_between(divs, sim_ci_high, sim_ci_low, facecolor=color[i], alpha=0.5)
+        ax.fill_between(divs, sim_sem_high, sim_sem_low, facecolor=color[i], alpha=0.5)
         ax.set(xlim=(0, 2500))
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
