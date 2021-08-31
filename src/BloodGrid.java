@@ -105,7 +105,7 @@ public class BloodGrid extends AgentGrid0D<BloodCell> {
             BloodCell d = NewAgent(); // One Daughter is born, the other is lost (thus only one is kept as stem, the new one)
             d.BirthClonalPop(c.cloneID, c.myEpigenome.NewChild().PossiblyMutate(), c.DivDaysLeft, c.CellStatus);
             if (c.myEpigenome.mutated) {
-                c.myEpigenome.epiData = null;
+//                 c.myEpigenome.epiData = null;
                 c.myEpigenome.DisposeClone();
             }
             c.Dispose();
