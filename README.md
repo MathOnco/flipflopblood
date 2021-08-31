@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5348301.svg)](https://doi.org/10.5281/zenodo.5348301)
+
 ## Summary
 
 Simulations of hematopoietic stem cells to accompany our paper "Cell lineage tracing with molecular clocks based on fluctuating DNA methylation."
